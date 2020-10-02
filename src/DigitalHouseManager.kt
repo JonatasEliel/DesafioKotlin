@@ -1,9 +1,9 @@
-data class DigitalHouseManager(
-        var listaAlunos: MutableList<Aluno>,
-        var listaProfessores: MutableList<Professor>,
-        var listaCursos: MutableList<Curso>,
-        var listaMatriculas: MutableList<Matricula>
-) {
+class DigitalHouseManager {
+    var listaAlunos: MutableList<Aluno> = mutableListOf()
+    var listaProfessores: MutableList<Professor> = mutableListOf()
+    var listaCursos: MutableList<Curso> = mutableListOf()
+    var listaMatriculas: MutableList<Matricula> = mutableListOf()
+
     fun registrarCurso(
             nome: String,
             codigoCurso: Int,
@@ -73,7 +73,7 @@ data class DigitalHouseManager(
             codigoCurso: Int,
             codigoProfessorTitular: Int,
             codigoProfessorAdjunto: Int
-    ){
+    ) {
         val curso: Curso? = listaCursos.firstOrNull { it.codigoCurso == codigoCurso }
                 ?: throw Exception("Curso não cadastrado")
 
