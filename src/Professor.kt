@@ -1,4 +1,4 @@
-data class Professor(
+abstract class Professor(
         var nome: String,
         var sobrenome: String,
         var codigoProfessor: Int,
