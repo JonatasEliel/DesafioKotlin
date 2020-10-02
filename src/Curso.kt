@@ -1,12 +1,15 @@
 class Curso(
         var nome: String,
         var codigoCurso: Int,
-        var professorTitular: ProfessorTitular,
-        var professorAdjunto: ProfessorAdjunto,
-        val qtdeMaxAlunos: Int,
-        var listaAlunos: MutableList<Aluno>
+        val qtdeMaxAlunos: Int
 ) {
-    constructor(nome: String, codigoCurso: Int, qtdeMaxAlunos: Int)
+    lateinit var professorTitular: ProfessorTitular
+    lateinit var professorAdjunto: ProfessorAdjunto
+    var listaAlunos: MutableList<Aluno> = mutableListOf()
+
+    override fun toString(): String {
+        return "$nome\ncód: $codigoCurso\nlimite: $qtdeMaxAlunos"
+    }
 
     override fun equals(other: Any?): Boolean {
         return when {

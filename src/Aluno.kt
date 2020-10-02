@@ -11,4 +11,8 @@ data class Aluno (
             else -> true
         }
     }
+
+    override fun toString(): String {
+        return "$nome $sobrenome - cód: $codigoAluno"
+    }
 }
