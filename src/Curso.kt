@@ -6,6 +6,8 @@ class Curso(
         val qtdeMaxAlunos: Int,
         var listaAlunos: MutableList<Aluno>
 ) {
+    constructor(nome: String, codigoCurso: Int, qtdeMaxAlunos: Int)
+
     override fun equals(other: Any?): Boolean {
         return when {
             this === other -> true
